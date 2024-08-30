@@ -1,6 +1,26 @@
 import os
 import re
+import time
 import shutil
+import argparse
+import textwrap
+
+parser = argparse.ArgumentParser(description="Script to automatically transfer files from specified source directory to indicated destination directory", 
+                                 usage="Run python main.py -h for more info", formatter_class=argparse.RawTextHelpFormatter)
+
+parser.add_argument("-s", "--source_dir", type=str, required=True, help=textwrap.dedent('''Source directory path
+                                                                                        Accepts both relative and absolute paths
+                                                                                        Type = str'''))
+parser.add_argument("-d", "--dest_dir",   type=str, required=True, help=textwrap.dedent('''Destination directory path
+                                                                                        Accepts both relative and absolute paths
+                                                                                        Type = str'''))
+
+args = parser.parse_args()
+
+source_dir    = os.path.abspath(args.source_dir)
+dest_base_dir = os.path.abspath(args.dest_dir)
+
+start_time = time.time()
 
 # Define source and destination directories
 source_dir    = "E:/Torrented Files"
@@ -77,3 +97,21 @@ if missing_dir:
 else:
     # Echo completion message
     print("All files processed!")
+
+end_time = time.time()
+
+duration_sec = end_time - start_time
+
+if duration_sec//60 != 0:
+    duration_min = duration_sec/60
+    if duration_min//60 != 0:
+        duration = duration_min/60
+        tag = "hr"
+    else:
+        duration = duration_min
+        tag = "min"
+else:
+    duration = duration_sec
+    tag = "sec"
+
+print(f"Process took {duration} {tag} to finish!")
