@@ -22,10 +22,6 @@ dest_base_dir = os.path.abspath(args.dest_dir)
 
 start_time = time.time()
 
-# Define source and destination directories
-source_dir    = "E:/Torrented Files"
-dest_base_dir = "Z:/Animes"
-
 # List all MKV files in source directory
 files = [f for f in os.listdir(source_dir) if f.endswith('.mkv')]
 
