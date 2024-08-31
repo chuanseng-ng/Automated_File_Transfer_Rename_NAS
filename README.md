@@ -8,9 +8,9 @@
 5. NIL
 
 ## Status:
-1. Conversion done -> Verified to be working
-2. Conversion done -> Verified to be working
-3. In-progress
+1. Feature done -> Verified to be working
+2. Feature done -> Verified to be working
+3. Feature done -> Not yet verified
 4. Pending
 5. NIL
 
