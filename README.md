@@ -14,4 +14,7 @@
 4. Pending
 5. NIL
 
-## 
+## Requirements:
+- PIP
+  - requests
+  - python
