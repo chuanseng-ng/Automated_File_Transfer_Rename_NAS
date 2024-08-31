@@ -9,7 +9,7 @@
 
 ## Status:
 1. Conversion done -> Verified to be working
-2. Conversion done -> Not yet verified
+2. Conversion done -> Verified to be working
 3. In-progress
 4. Pending
 5. NIL
