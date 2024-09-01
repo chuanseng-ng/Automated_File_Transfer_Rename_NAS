@@ -32,11 +32,13 @@ def file_move_main(source_dir, dest_base_dir, name_pattern_dict):
         # Define destination directory based on pattern
         dest_dir = os.path.join(dest_base_dir, pattern_fin)
 
+        missing_dir_check = False
+
         # Check if destination directory exists
         if not os.path.exists(dest_dir):
             dir_dict_found = False
 
-            for key, value in name_pattern_dict:
+            for key, value in name_pattern_dict.items():
                 if pattern_fin in key:
                     dest_dir       = os.path.join(dest_base_dir, value)
                     dir_dict_found = True
@@ -44,11 +46,13 @@ def file_move_main(source_dir, dest_base_dir, name_pattern_dict):
             if dir_dict_found:
                 print(f"Destination directory exists, found in dict: {dest_dir}")
             else:
+                missing_dir_check = True
                 missing_dir_list.append(pattern_fin)
                 print(f"Destination directory does not exist: {pattern_fin}")
         else:
             print(f"Destination directory exists: {dest_dir}")
-
+        
+        if not(missing_dir_check):
             # Check if sub-directories exists
             sub_dirs = [d for d in os.listdir(dest_dir) if os.path.isdir(os.path.join(dest_dir, d))]
 
