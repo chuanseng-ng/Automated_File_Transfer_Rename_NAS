@@ -21,3 +21,4 @@
 
 ## Hit-Miss Mapping:
 - One-Piece
+- Monogatari
