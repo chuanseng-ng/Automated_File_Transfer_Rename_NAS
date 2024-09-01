@@ -10,8 +10,8 @@
 ## Status:
 1. Feature done -> Verified to be working
 2. Feature done -> Verified to be working
-3. Feature done -> Not yet verified
-4. Pending
+3. Feature done -> Verified to be working
+4. In-progress
 5. NIL
 
 ## Requirements:
